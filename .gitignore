@@ -1,0 +1,7 @@
+node_modules/
+out/
+renders/
+template/.hyperframes/
+template/snapshots/
+template/assets/voice.mp3
+*.log

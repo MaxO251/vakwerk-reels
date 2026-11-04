@@ -1,0 +1,12 @@
+name: Nederlandse HeyGen-stemmen tonen
+on: workflow_dispatch
+jobs:
+  stemmen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lijst Nederlandse stemmen (naam, geslacht, voice_id)
+        env:
+          HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+        run: |
+          curl -s -H "X-Api-Key: $HEYGEN_API_KEY" "https://api.heygen.com/v3/voices?engine=starfish&type=public&limit=200" \
+          | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{const j=JSON.parse(d);const v=(j.data||j.voices||[]).filter(x=>/dutch|nederlands|nl/i.test(String(x.language||"")));if(!v.length)console.log("Geen Nederlandse stemmen gevonden; antwoord:",d.slice(0,300));v.forEach(x=>console.log([x.name,x.gender,x.voice_id].join(" | ")))})'

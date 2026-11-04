@@ -1,0 +1,53 @@
+{
+ "post_key": "reserve-2026-11-08",
+ "format": "carrousel",
+ "dienst": "KlantenservicePro",
+ "onderwerp": "Klacht komt eerst bij jou",
+ "slides": [
+  {
+   "type": "text",
+   "theme": "dark",
+   "kicker": "KlantenservicePro",
+   "hsize": "h-xl",
+   "title": "Klacht binnen terwijl je op de *steiger* staat"
+  },
+  {
+   "type": "contrast",
+   "theme": "light",
+   "title": "Een klacht tijdens je werkdag",
+   "links_titel": "Zonder",
+   "zonder": [
+    "Zelf een antwoord bedenken",
+    "Na een lange werkdag"
+   ],
+   "rechts_titel": "Met KlantenservicePro",
+   "met": [
+    "Klacht gaat eerst naar jou",
+    "Met een conceptantwoord"
+   ]
+  },
+  {
+   "type": "screen",
+   "theme": "dark",
+   "img": "tel-ks-voorstel",
+   "title": "Jij krijgt een *conceptantwoord*",
+   "body": "Bij een klacht beslis jij."
+  },
+  {
+   "type": "text",
+   "theme": "light",
+   "kicker": "Je klant blijft geholpen",
+   "hsize": "h-l",
+   "title": "Jij houdt de *controle*",
+   "body": "Veelvoorkomende vragen beantwoordt de dienst zelf, op basis van jouw bedrijfsinformatie."
+  },
+  {
+   "type": "cta",
+   "theme": "green",
+   "title": "Klachten eerst naar *jou*",
+   "body": "Met conceptantwoord. Jij beslist.",
+   "button": "Link in bio"
+  }
+ ],
+ "reel_script": "Klacht binnen terwijl je op de steiger staat. Bij KlantenservicePro gaat een klacht niet zomaar naar je klant. Hij komt eerst bij jou, met een conceptantwoord erbij. Jij leest het voorstel en beslist. Veelvoorkomende vragen beantwoordt de dienst zelf, op basis van jouw bedrijfsinformatie. Zo blijft de klant geholpen en houd jij de controle. Wil je zien hoe het werkt? Kijk via de link in bio."
+}

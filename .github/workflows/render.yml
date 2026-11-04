@@ -1,0 +1,33 @@
+name: Reel renderen
+on:
+  workflow_dispatch:
+    inputs:
+      post:
+        description: "Post als JSON (post_key, slides, voiceover)"
+        required: true
+concurrency:
+  group: reel-render
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: FedericoCarboni/setup-ffmpeg@v3
+      - name: Chrome voor HyperFrames
+        run: npx -y hyperframes@0.9.8 browser ensure
+      - name: Renderen en terugmelden
+        env:
+          POST_JSON: ${{ github.event.inputs.post }}
+          HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+          HEYGEN_VOICE_ID: ${{ secrets.HEYGEN_VOICE_ID }}
+          N8N_CALLBACK_URL: ${{ secrets.N8N_CALLBACK_URL }}
+          N8N_CALLBACK_TOKEN: ${{ secrets.N8N_CALLBACK_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: node render.mjs
